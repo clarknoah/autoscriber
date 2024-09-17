@@ -1,0 +1,19 @@
+{
+  "name": "autoscriber",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server",
+    "shared"
+  ],
+"scripts": {
+  "export-codebase": "./local_utilities/export_codebase.sh . codebase/client-core.txt name '*.*' 'dist' 'bin' 'node_modules' 'local_utilities' 'yarn.lock' '.gitignore' '.git' 'client/public' 'client/src/assets'"
+},
+  "devDependencies": {
+    "@types/node": "^22.5.5",
+    "typescript": "^5.6.2"
+  }
+}
