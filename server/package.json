@@ -1,0 +1,56 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@apollo/server": "^4.11.0",
+    "@mikro-orm/cli": "^6.3.10",
+    "@mikro-orm/core": "^6.3.10",
+    "@mikro-orm/migrations": "^6.3.10",
+    "@mikro-orm/postgresql": "^6.3.10",
+    "@types/cors": "^2.8.17",
+    "@types/node": "^22.5.5",
+    "@types/uuid": "^10.0.0",
+    "aws-sdk": "^2.1691.0",
+    "class-validator": "^0.14.1",
+    "cors": "^2.8.5",
+    "date-fns": "^4.1.0",
+    "dotenv": "^16.4.5",
+    "express-static-gzip": "^2.1.8",
+    "graphql": "^16.9.0",
+    "graphql-scalars": "^1.23.0",
+    "mikro-orm": "^6.3.10",
+    "minio": "^8.0.1",
+    "reflect-metadata": "^0.2.2",
+    "type-graphql": "^2.0.0-rc.2",
+    "uuid": "^10.0.0",
+    "winston": "^3.14.2",
+    "yup": "^1.4.0"
+  },
+  "devDependencies": {
+    "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.6.2"
+  },
+  "mikro-orm": {
+    "configPaths": [
+      "./dist/orm.config.js",
+      "./src/orm.config.ts"
+    ],
+    "useTsNode": true
+  },
+  "scripts": {
+    "dev": "tsnd -r tsconfig-paths/register --watch ./.env --respawn --transpile-only  ./src/app.ts",
+    "build": "tsc",
+    "start": "node ./dist/app.js",
+    "db:start": "docker run --name my_postgres_db -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=autoscriber -p 5432:5432 -v my_postgres_data:/var/lib/postgresql/data -d postgres:13",
+    "db:stop": "docker stop my_postgres_db && docker rm my_postgres_db",
+    "db:status": "docker ps -a | grep my_postgres_db",
+    "db:logs": "docker logs my_postgres_db",
+    "migration:create": "NODE_PATH=src mikro-orm migration:create",
+    "migration:down": "NODE_PATH=src mikro-orm migration:down",
+    "migration:generate-entities": "mikro-orm generate-entities -s --path src/models/",
+    "migration:up": "mikro-orm migration:up"
+  }
+}

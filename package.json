@@ -9,9 +9,13 @@
     "server",
     "shared"
   ],
-"scripts": {
-  "export-codebase": "./local_utilities/export_codebase.sh . codebase/client-core.txt name '*.*' 'dist' 'bin' 'node_modules' 'local_utilities' 'yarn.lock' '.gitignore' '.git' 'client/public' 'client/src/assets'"
-},
+  "scripts": {
+    "export-client": "./scripts/export_codebase.sh ./client codebase/client-core.txt name '*.*'  'logs' '/data' 'yarn-error.log' 'package-lock.json' '.DS_Store' 'dist' 'bin' 'node_modules' 'local_utilities' 'yarn.lock' '.gitignore' '.git' 'client/public' 'client/src/assets'",
+    "export-server": "./scripts/export_codebase.sh ./server codebase/server-core.txt name '*.*' 'logs' '/data' 'migrations' 'yarn-error.log' 'package-lock.json' '.DS_Store' 'dist' 'bin' 'node_modules' 'local_utilities' 'yarn.lock' '.gitignore' '.git' 'client/public' 'client/src/assets'",
+    "export-all": "./scripts/export_codebase.sh . codebase/all-core.txt name '*.*' 'logs' '/data' 'yarn-error.log' 'package-lock.json' '.DS_Store' 'dist' 'bin' 'node_modules' 'local_utilities' 'yarn.lock' '.gitignore' '.git' 'client/public' 'client/src/assets'",
+    "start:minio": "docker run -p 9000:9000 -p 9001:9001 --name minio -e MINIO_ROOT_USER=minioadmin -e MINIO_ROOT_PASSWORD=minioadmin minio/minio server /data --console-address ':9001'",
+    "stop:minio": "docker stop minio && docker rm minio"
+  },
   "devDependencies": {
     "@types/node": "^22.5.5",
     "typescript": "^5.6.2"

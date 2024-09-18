@@ -1,0 +1,6 @@
+2024-09-18 10:12:28 error: Error: ENOENT: no such file or directory, stat '/Users/clarknoah/Development/autoscriber/client/build/index.html'
+2024-09-18 10:12:29 error: Error: ENOENT: no such file or directory, stat '/Users/clarknoah/Development/autoscriber/client/build/index.html'
+2024-09-18 15:04:14 error: Mikro-ORM Failed to initialize Using global EntityManager instance methods for context specific actions is disallowed. If you need to work with the global instance's identity map, use `allowGlobalContext` configuration option or `fork()` instead.
+2024-09-18 15:05:03 error: Mikro-ORM Failed to initialize Using global EntityManager instance methods for context specific actions is disallowed. If you need to work with the global instance's identity map, use `allowGlobalContext` configuration option or `fork()` instead.
+2024-09-18 15:05:22 error: Mikro-ORM Failed to initialize Using global EntityManager instance methods for context specific actions is disallowed. If you need to work with the global instance's identity map, use `allowGlobalContext` configuration option or `fork()` instead.
+2024-09-18 15:05:55 error: Mikro-ORM Failed to initialize Using global EntityManager instance methods for context specific actions is disallowed. If you need to work with the global instance's identity map, use `allowGlobalContext` configuration option or `fork()` instead.

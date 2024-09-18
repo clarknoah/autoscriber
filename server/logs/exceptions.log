@@ -1,0 +1,188 @@
+2024-09-18 12:14:40 error: uncaughtException: listen EADDRINUSE: address already in use 0.0.0.0:4000
+Error: listen EADDRINUSE: address already in use 0.0.0.0:4000
+    at Server.setupListenHandle [as _listen2] (node:net:1740:16)
+    at listenInCluster (node:net:1788:12)
+    at doListen (node:net:1937:7)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+2024-09-18 14:04:44 error: uncaughtException: listen EADDRINUSE: address already in use 0.0.0.0:4000
+Error: listen EADDRINUSE: address already in use 0.0.0.0:4000
+    at Server.setupListenHandle [as _listen2] (node:net:1740:16)
+    at listenInCluster (node:net:1788:12)
+    at doListen (node:net:1937:7)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+2024-09-18 15:03:39 error: uncaughtException: ⨯ Unable to compile TypeScript:
+src/server/db.ts(35,1): error TS1005: '}' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/server/db.ts(35,1): error TS1005: '}' expected.
+
+    at Object.<anonymous> (/Users/clarknoah/Development/autoscriber/server/src/server/db.ts:1:7)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._compile (/Users/clarknoah/Development/autoscriber/node_modules/source-map-support/source-map-support.js:568:25)
+    at Module.m._compile (/private/var/folders/g4/sdq5708d1qz7pzk4wr74rpn00000gn/T/ts-node-dev-hook-15089664742828357.js:69:33)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at require.extensions..jsx.require.extensions..js (/private/var/folders/g4/sdq5708d1qz7pzk4wr74rpn00000gn/T/ts-node-dev-hook-15089664742828357.js:114:20)
+    at require.extensions.<computed> (/private/var/folders/g4/sdq5708d1qz7pzk4wr74rpn00000gn/T/ts-node-dev-hook-15089664742828357.js:71:20)
+    at Object.nodeDevHook [as .ts] (/Users/clarknoah/Development/autoscriber/node_modules/ts-node-dev/lib/hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:958:12)
+2024-09-18 15:08:54 error: uncaughtException: Value for User.id is required, 'undefined' found
+entity: User {
+  audioFiles: Collection<Audio> { initialized: true, dirty: false },
+  createdAt: 2024-09-18T13:08:54.888Z,
+  lastModifiedAt: 2024-09-18T13:08:54.888Z,
+  firstname: 'Demo',
+  lastname: 'User'
+}
+ValidationError: Value for User.id is required, 'undefined' found
+entity: User {
+  audioFiles: Collection<Audio> { initialized: true, dirty: false },
+  createdAt: 2024-09-18T13:08:54.888Z,
+  lastModifiedAt: 2024-09-18T13:08:54.888Z,
+  firstname: 'Demo',
+  lastname: 'User'
+}
+    at Function.propertyRequired (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/errors.js:69:16)
+    at EntityValidator.validateRequired (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/entity/EntityValidator.js:52:48)
+    at ChangeSetPersister.processProperties (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:89:28)
+    at /Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:35:46
+    at Array.forEach (<anonymous>)
+    at ChangeSetPersister.executeInserts (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:35:20)
+    at ChangeSetPersister.runForEachSchema (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:80:31)
+    at ChangeSetPersister.executeInserts (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:32:25)
+    at UnitOfWork.commitCreateChangeSets (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/unit-of-work/UnitOfWork.js:768:39)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-09-18 15:13:43 error: uncaughtException: Value for User.id is required, 'undefined' found
+entity: User {
+  audioFiles: Collection<Audio> { initialized: true, dirty: false },
+  createdAt: 2024-09-18T13:13:43.304Z,
+  lastModifiedAt: 2024-09-18T13:13:43.304Z,
+  firstname: 'Demo',
+  lastname: 'User'
+}
+ValidationError: Value for User.id is required, 'undefined' found
+entity: User {
+  audioFiles: Collection<Audio> { initialized: true, dirty: false },
+  createdAt: 2024-09-18T13:13:43.304Z,
+  lastModifiedAt: 2024-09-18T13:13:43.304Z,
+  firstname: 'Demo',
+  lastname: 'User'
+}
+    at Function.propertyRequired (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/errors.js:69:16)
+    at EntityValidator.validateRequired (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/entity/EntityValidator.js:52:48)
+    at ChangeSetPersister.processProperties (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:89:28)
+    at /Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:35:46
+    at Array.forEach (<anonymous>)
+    at ChangeSetPersister.executeInserts (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:35:20)
+    at ChangeSetPersister.runForEachSchema (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:80:31)
+    at ChangeSetPersister.executeInserts (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:32:25)
+    at UnitOfWork.commitCreateChangeSets (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/unit-of-work/UnitOfWork.js:768:39)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-09-18 15:13:59 error: uncaughtException: Value for User.id is required, 'undefined' found
+entity: User {
+  audioFiles: Collection<Audio> { initialized: true, dirty: false },
+  createdAt: 2024-09-18T13:13:59.185Z,
+  lastModifiedAt: 2024-09-18T13:13:59.185Z,
+  firstname: 'Demo',
+  lastname: 'User'
+}
+ValidationError: Value for User.id is required, 'undefined' found
+entity: User {
+  audioFiles: Collection<Audio> { initialized: true, dirty: false },
+  createdAt: 2024-09-18T13:13:59.185Z,
+  lastModifiedAt: 2024-09-18T13:13:59.185Z,
+  firstname: 'Demo',
+  lastname: 'User'
+}
+    at Function.propertyRequired (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/errors.js:69:16)
+    at EntityValidator.validateRequired (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/entity/EntityValidator.js:52:48)
+    at ChangeSetPersister.processProperties (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:89:28)
+    at /Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:35:46
+    at Array.forEach (<anonymous>)
+    at ChangeSetPersister.executeInserts (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:35:20)
+    at ChangeSetPersister.runForEachSchema (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:80:31)
+    at ChangeSetPersister.executeInserts (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:32:25)
+    at UnitOfWork.commitCreateChangeSets (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/unit-of-work/UnitOfWork.js:768:39)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-09-18 19:24:57 error: uncaughtException: Cannot find module 'resources/utils/outputs/Chunk/success'
+Require stack:
+- /Users/clarknoah/Development/autoscriber/server/src/resources/Audio/Chunk/resolver.ts
+- /Users/clarknoah/Development/autoscriber/server/src/resources/index.ts
+- /Users/clarknoah/Development/autoscriber/server/src/orm.config.ts
+- /Users/clarknoah/Development/autoscriber/server/src/server/db.ts
+- /Users/clarknoah/Development/autoscriber/server/src/server/index.ts
+- /Users/clarknoah/Development/autoscriber/server/src/app.ts
+Error: Cannot find module 'resources/utils/outputs/Chunk/success'
+Require stack:
+- /Users/clarknoah/Development/autoscriber/server/src/resources/Audio/Chunk/resolver.ts
+- /Users/clarknoah/Development/autoscriber/server/src/resources/index.ts
+- /Users/clarknoah/Development/autoscriber/server/src/orm.config.ts
+- /Users/clarknoah/Development/autoscriber/server/src/server/db.ts
+- /Users/clarknoah/Development/autoscriber/server/src/server/index.ts
+- /Users/clarknoah/Development/autoscriber/server/src/app.ts
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1075:15)
+    at Function.Module._resolveFilename (/Users/clarknoah/Development/autoscriber/node_modules/tsconfig-paths/src/register.ts:115:36)
+    at Function.Module._load (node:internal/modules/cjs/loader:920:27)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (/Users/clarknoah/Development/autoscriber/server/src/resources/Audio/Chunk/resolver.ts:14:1)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._compile (/Users/clarknoah/Development/autoscriber/node_modules/source-map-support/source-map-support.js:568:25)
+    at Module.m._compile (/private/var/folders/g4/sdq5708d1qz7pzk4wr74rpn00000gn/T/ts-node-dev-hook-3085508664945691.js:69:33)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+2024-09-18 19:27:53 error: uncaughtException: listen EADDRINUSE: address already in use 0.0.0.0:4000
+Error: listen EADDRINUSE: address already in use 0.0.0.0:4000
+    at Server.setupListenHandle [as _listen2] (node:net:1740:16)
+    at listenInCluster (node:net:1788:12)
+    at doListen (node:net:1937:7)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+2024-09-18 20:39:15 error: uncaughtException: delete from "audio" where "id" in ('43fa89ab-cbb7-4a9f-8dc2-7f4d0671b688') - update or delete on table "audio" violates foreign key constraint "chunk_audio_foreign" on table "chunk"
+ - detail: Key (id)=(43fa89ab-cbb7-4a9f-8dc2-7f4d0671b688) is still referenced from table "chunk".
+ForeignKeyConstraintViolationException: delete from "audio" where "id" in ('43fa89ab-cbb7-4a9f-8dc2-7f4d0671b688') - update or delete on table "audio" violates foreign key constraint "chunk_audio_foreign" on table "chunk"
+ - detail: Key (id)=(43fa89ab-cbb7-4a9f-8dc2-7f4d0671b688) is still referenced from table "chunk".
+    at PostgreSqlExceptionConverter.convertException (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/postgresql/PostgreSqlExceptionConverter.js:32:24)
+    at PostgreSqlDriver.convertException (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/drivers/DatabaseDriver.js:345:54)
+    at /Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/drivers/DatabaseDriver.js:349:24
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at ChangeSetPersister.executeDeletes (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:67:13)
+    at ChangeSetPersister.runForEachSchema (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:80:13)
+    at UnitOfWork.commitDeleteChangeSets (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/unit-of-work/UnitOfWork.js:834:9)
+    at UnitOfWork.persistToDatabase (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/unit-of-work/UnitOfWork.js:747:13)
+    at PostgreSqlConnection.transactional (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/knex/AbstractSqlConnection.js:58:25)
+    at UnitOfWork.doCommit (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/unit-of-work/UnitOfWork.js:313:17)
+
+    at Parser.parseErrorMessage (/Users/clarknoah/Development/autoscriber/node_modules/pg-protocol/src/parser.ts:368:69)
+    at Parser.handlePacket (/Users/clarknoah/Development/autoscriber/node_modules/pg-protocol/src/parser.ts:187:21)
+    at Parser.parse (/Users/clarknoah/Development/autoscriber/node_modules/pg-protocol/src/parser.ts:102:30)
+    at Socket.<anonymous> (/Users/clarknoah/Development/autoscriber/node_modules/pg-protocol/src/index.ts:7:48)
+    at Socket.emit (node:events:513:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    at readableAddChunk (node:internal/streams/readable:297:9)
+    at Socket.Readable.push (node:internal/streams/readable:234:10)
+    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)
+    at TCP.callbackTrampoline (node:internal/async_hooks:130:17)
+2024-09-18 20:40:20 error: uncaughtException: delete from "audio" where "id" in ('52563ed0-bd9c-491a-830c-6842e14c7873') - update or delete on table "audio" violates foreign key constraint "chunk_audio_foreign" on table "chunk"
+ - detail: Key (id)=(52563ed0-bd9c-491a-830c-6842e14c7873) is still referenced from table "chunk".
+ForeignKeyConstraintViolationException: delete from "audio" where "id" in ('52563ed0-bd9c-491a-830c-6842e14c7873') - update or delete on table "audio" violates foreign key constraint "chunk_audio_foreign" on table "chunk"
+ - detail: Key (id)=(52563ed0-bd9c-491a-830c-6842e14c7873) is still referenced from table "chunk".
+    at PostgreSqlExceptionConverter.convertException (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/postgresql/PostgreSqlExceptionConverter.js:32:24)
+    at PostgreSqlDriver.convertException (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/drivers/DatabaseDriver.js:345:54)
+    at /Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/drivers/DatabaseDriver.js:349:24
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at ChangeSetPersister.executeDeletes (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:67:13)
+    at ChangeSetPersister.runForEachSchema (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:80:13)
+    at UnitOfWork.commitDeleteChangeSets (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/unit-of-work/UnitOfWork.js:834:9)
+    at UnitOfWork.persistToDatabase (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/unit-of-work/UnitOfWork.js:747:13)
+    at PostgreSqlConnection.transactional (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/knex/AbstractSqlConnection.js:58:25)
+    at UnitOfWork.doCommit (/Users/clarknoah/Development/autoscriber/node_modules/@mikro-orm/core/unit-of-work/UnitOfWork.js:313:17)
+
+    at Parser.parseErrorMessage (/Users/clarknoah/Development/autoscriber/node_modules/pg-protocol/src/parser.ts:368:69)
+    at Parser.handlePacket (/Users/clarknoah/Development/autoscriber/node_modules/pg-protocol/src/parser.ts:187:21)
+    at Parser.parse (/Users/clarknoah/Development/autoscriber/node_modules/pg-protocol/src/parser.ts:102:30)
+    at Socket.<anonymous> (/Users/clarknoah/Development/autoscriber/node_modules/pg-protocol/src/index.ts:7:48)
+    at Socket.emit (node:events:513:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    at readableAddChunk (node:internal/streams/readable:297:9)
+    at Socket.Readable.push (node:internal/streams/readable:234:10)
+    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)
+    at TCP.callbackTrampoline (node:internal/async_hooks:130:17)
