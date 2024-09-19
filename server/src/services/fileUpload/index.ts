@@ -18,9 +18,7 @@ export async function createBucket(bucketName: string) {
     if (!bucketExists) {
       // Create the bucket if it does not exist
       await fileUploadClient.makeBucket(bucketName, 'us-east-1'); // Replace 'us-east-1' with your preferred region
-      console.log(`Bucket '${bucketName}' created successfully.`);
-    } else {
-      console.log(`Bucket '${bucketName}' already exists.`);
+      console.info(`Bucket '${bucketName}' created successfully.`);
     }
   } catch (error) {
     console.error('Error creating bucket:', error);
@@ -28,11 +26,29 @@ export async function createBucket(bucketName: string) {
 }
 
 
-export const generatePresignedUrl = async (objectName: string): Promise<string> => {
+export const generatePresignedUrl = async (
+  objectName: string,
+  method: 'GET' | 'PUT' = 'PUT',
+  expirySeconds: number = 3600 // Default to 1 hour
+): Promise<string> => {
   try {
-    // Generate a presigned URL valid for 15 minutes (900 seconds)
-    const presignedUrl = await fileUploadClient.presignedPutObject(env.OBJECT_STORE_BUCKET, objectName, 900);
-    return presignedUrl;
+    if (method === 'PUT') {
+      return await fileUploadClient.presignedPutObject(
+        env.OBJECT_STORE_BUCKET,
+        objectName,
+        expirySeconds
+      );
+    } else if (method === 'GET') {
+      return await fileUploadClient.presignedGetObject(
+        env.OBJECT_STORE_BUCKET,
+        objectName,
+        expirySeconds
+      );
+    } else {
+      throw new Error(`Unsupported method: ${method}`);
+    }
+
+    
   } catch (error) {
     console.error('Error generating presigned URL:', error);
     throw error;

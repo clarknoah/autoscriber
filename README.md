@@ -1,49 +1,171 @@
-# Client Tasks
+# Autoscriber Application
 
-# Client Components
+Autoscriber is a full-stack application that allows users to record audio, save it in chunks, and play back previous recordings. It utilizes a Vue.js frontend, a Node.js backend with GraphQL, a PostgreSQL database, and MinIO for object storage.
 
-## AudioRecorder
-This component is responsible for managing the recording of audio files.
+## **Features**
 
-### Props
-None
+- Record audio in WAV format.
+- Save audio in chunks for efficient upload and storage.
+- Play back full recordings or individual chunks.
+- View a list of previous recordings.
 
-### Requirements
-- Has a Start Recording Button
-  - On Clicking start, begins recording audio from microphone
-- Has a Stop Recording Button
-  - On Click, stops recording the audio and renders the AudioPlayer component with the audio file
-- Has a Pause Recording Button
-- Shows in real-time the content as a waveform using Wavesurfer when recording
-- Once the recording has been complete:
-  - The waveform should be shown for the audio
-  - A Save Audio Buttion should be presented
-    - on Click, the audio should be save to the Vue State
-    - capture the entire session’s audio file and send it separately to your back-end service to be saved to the database. (currently just stub out this functionality)
-  - A Delete Audio Button should be presented
-    - on Click, the audio should be deleted from the local state
-- While Recording
-  - The recording framework needs to be able to have an event that is fired every 5 seconds to capture the audio byte stream in chunks while recording, rather than at the end of the recording session.
-  -  Each chunk of byte audio stream data needs to be sent to a Node js back-end(rest or graphql api) as .wav format. (back-end javascript framework of your choice) (currently simply create a function which handles the submitting of it with correct error handling, backend functionality will be implemented late)
+## **Architecture**
 
+- **Frontend:** Vue.js with Vuetify for UI components.
+- **Backend:** Node.js, GraphQL with Apollo Server, MikroORM for database interactions.
+- **Database:** PostgreSQL.
+- **Object Storage:** MinIO (S3-compatible storage).
 
-## AudioPlayer
-This component will receive an audio file and play its contents, it should be loosely coupled using props
+## **Prerequisites**
 
-### Props
-- file: Should be an object that contains all of the data to be played
-- ShowWaveform: Optional boolean which when true, will show a wavesurfer waveform of the audio
+- Docker and Docker Compose installed on your machine.
 
-### Requirements
-- Should be a rounded component
-- Should have a play button
-  - on click, should resume the audio whereever it is
-- Should have a pause button
-  - Pause button should appear where play button is once the file is playing
-  - on click, it should pause the audio where it is, and the play button should appear
-- Should have a stop button
-  - on click: Current play resets to beginning
-- Should have a waveform optionally rendered depending on props
+## **Setup Instructions**
+
+1. **Clone the Repository:**
+
+   ```bash
+   git clone https://github.com/your-username/autoscriber.git
+   cd autoscriber
+   ```
+
+2. **Environment Variables:**
+
+* The necessary environment variables are already configured in the docker-compose.yml file and server .env file.
+* Ensure the following variables are set in server/.env if running outside Docker:
 
 
+```env
+DATABASE_URL=postgres://postgres:postgres@localhost:5432/autoscriber
+OBJECT_STORE_URL=127.0.0.1
+OBJECT_STORE_PORT=9000
+OBJECT_STORE_ACCESS_KEY=minioadmin
+OBJECT_STORE_SECRET_KEY=minioadmin
+OBJECT_STORE_BUCKET=autoscriber
+```
 
+
+3. **Build and Run with Docker Compose:**
+
+```bash
+docker-compose up --build
+```
+
+* This command builds the Docker images and starts all services: client, server, postgres, and minio.
+* The client will be accessible at http://localhost:8080.
+* The server GraphQL playground (if enabled) at http://localhost:4000/graphql.
+* MinIO console accessible at http://localhost:9001 (username/password: minioadmin).
+
+
+4. **Access the Application:**
+
+* Navigate to http://localhost:8080 in your browser.
+* Start recording audio, save recordings, and view them in the "Previous Recordings" page.
+
+
+## **Development Notes**
+* Frontend Development:
+  * Install dependencies:
+```bash
+cd client
+yarn install
+```
+* Run the development server:
+
+```bash
+Copy code
+yarn serve
+```
+
+* Backend Development:
+  * Install dependencies:
+
+bash
+Copy code
+cd server
+yarn install
+Run the development server:
+
+bash
+Copy code
+yarn dev
+Running Migrations:
+
+Navigate to the server directory and run:
+
+bash
+Copy code
+yarn migration:up
+Troubleshooting
+Ports Already in Use:
+Ensure ports 8080, 4000, 5432, 9000, and 9001 are free before starting.
+Docker Permissions:
+If you encounter permission issues, try running Docker commands with sudo or adjust your user permissions.
+Contributing
+Pull requests are welcome. For significant changes, please open an issue first to discuss what you would like to change.
+License
+This project is licensed under the MIT License.
+markdown
+Copy code
+
+---
+
+## **Task 6: Code Improvements for Interview Purposes**
+
+**Areas of Improvement:**
+
+1. **Error Handling:**
+
+   - **Consistent Error Responses:** Ensure that all API endpoints return errors in a consistent format.
+   - **Logging:** Enhance logging to include more contextual information.
+
+2. **Code Organization:**
+
+   - **Separate Concerns:** Split large files into smaller, more focused modules.
+   - **Comments and Documentation:** Add JSDoc comments to functions and classes for better understanding.
+
+3. **Security Enhancements:**
+
+   - **Authentication and Authorization:** Implement user authentication to prevent unauthorized access.
+   - **Input Validation:** Use validation libraries to sanitize and validate all incoming data.
+
+4. **Performance Optimization:**
+
+   - **Chunk Uploads:** Optimize chunk size and upload frequency to balance performance and resource usage.
+   - **Database Indexing:** Ensure that database queries are optimized with proper indexing.
+
+5. **Scalability Considerations:**
+
+   - **Microservices Architecture:** Consider splitting services into separate microservices for better scalability.
+   - **Load Balancing:** Implement load balancing strategies if expecting high traffic.
+
+6. **Testing:**
+
+   - **Unit Tests:** Write unit tests for critical components to ensure reliability.
+   - **Integration Tests:** Test interactions between different parts of the application.
+
+7. **Code Quality Tools:**
+
+   - **Linting and Formatting:** Use ESLint and Prettier consistently across the project.
+   - **TypeScript Strict Mode:** Enable stricter TypeScript settings for better type safety.
+
+8. **Documentation:**
+
+   - **API Documentation:** Use tools like Swagger or GraphQL introspection to document APIs.
+   - **README Enhancements:** Provide more detailed setup instructions and FAQs.
+
+9. **Use of Environment Variables:**
+
+   - **Centralized Configuration:** Manage environment variables and configuration settings in a centralized module.
+   - **Secrets Management:** Avoid hardcoding secrets; use a secure secrets management system.
+
+10. **Docker Optimization:**
+
+    - **Multi-stage Builds:** Optimize Docker images using multi-stage builds to reduce image size.
+    - **Health Checks:** Ensure all services have proper health checks defined.
+
+**By addressing these areas, the codebase will not only be more robust and maintainable but will also showcase best practices, which is beneficial for interview purposes.**
+
+---
+
+I hope this comprehensive guide helps you complete your assignment successfully. If you have any questions or need further clarification on any of the steps, feel free to ask!

@@ -42,7 +42,6 @@ export default async function initializeApolloServer(
 
         const em = orm.em.fork();
 
-        console.log("Getting Contexrt");
         const user = await populateDemoUser(em);
 
         return {

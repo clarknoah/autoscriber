@@ -7,9 +7,6 @@ import {
 
 @InputType()
 export default class CreateChunkInput {
-  @Field((type) => String )
-  @IsString()
-  uri: string;
 
   @Field((type) => String )
   @IsString()

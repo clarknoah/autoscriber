@@ -1,9 +1,11 @@
 import {
   Arg,
   Ctx,
+  FieldResolver,
   Mutation,
   Query,
   Resolver,
+  Root,
 } from "type-graphql";
 import { Context } from "util/interfaces";
 import { User } from "resources/User/model";
@@ -11,7 +13,7 @@ import { SuccessOutput } from "resources/utils/outputs/Success/output";
 import { Audio } from "./model";
 import { generatePresignedUrl } from "services/fileUpload";
 import { env } from "config/globals";
-import uuid from "uuid";
+import {v4 as uuidv4 } from "uuid";
 import UpdateAudioInput from "./inputs/update.input";
 import { UpdateAudioOutput } from "./outputs/update.output";
 import DeleteAudioInput from "./inputs/delete.input";
@@ -22,17 +24,26 @@ import { QueryAudioInput } from "./inputs/query.input";
 export class AudioResolver {
   constructor() {}
 
+  @FieldResolver(() => String, { description: 'Presigned URL for accessing the audio file' })
+  async presignedUrl(@Root() audio: Audio): Promise<string> {
+    const presignedUrl = await generatePresignedUrl(audio.uri, 'GET');
+    return presignedUrl;
+  }
+
   @Mutation((returns) => SuccessOutput, { nullable: true })
   async createAudio(
     @Ctx() context: Context,
   ): Promise<SuccessOutput> {
     const { em, user } = context;
 
-    console.log(user);
+    const audioId = uuidv4(); // Generate a unique ID for the audio
+    const audioUri = `audio-${user.id}-${audioId}.wav`; // Construct the URI
+
+
     const audio = new Audio(user, {
       duration: 0,
       size: 0,
-      uri: "1234"
+      uri: audioUri
     });
 
     em.persist(audio);
@@ -41,8 +52,7 @@ export class AudioResolver {
 
     return {
       success: true,
-      id: audio.id,
-      uploadToken: "yolo"
+      id: audio.id
     };
   }
 
@@ -54,8 +64,6 @@ export class AudioResolver {
   ): Promise<UpdateAudioOutput> {
     const { user, em } = context;
 
-    const audioName = `${user.id}-${input.id}`;
-
     const audio = await em.findOneOrFail(Audio, { id: input.id });
 
     audio.duration = input.duration;
@@ -64,7 +72,7 @@ export class AudioResolver {
     em.persist(audio);
     await em.flush();
 
-    const presignedUrl = await generatePresignedUrl(audioName);
+    const presignedUrl = await generatePresignedUrl(audio.uri);
 
     return {
       success: true,
@@ -79,9 +87,7 @@ export class AudioResolver {
     @Ctx() context: Context,
   ): Promise<SuccessOutput> {
 
-    const { user, em } = context;
-
-    console.log({input})
+    const { em } = context;
 
     const audio = await em.findOneOrFail(Audio, { id: input.id });
 

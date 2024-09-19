@@ -1,5 +1,5 @@
 import { Request as ExpressRequest } from "express";
-import { User } from "resources/models";
+import { User } from "resources/User/model";
 
 import { EntityManager, PostgreSqlDriver } from "@mikro-orm/postgresql";
 import { GraphQLResolveInfo } from "graphql";

@@ -51,6 +51,10 @@ export class DefaultAudioFields extends DefaultFields {
   })
   uri: string;
 
+
+  @Field(() => String, { description: 'Presigned URL for accessing the audio file' })
+  presignedUrl: string; 
+
   constructor(    
     currentUser: User,
     input: IDefaultAudioFields

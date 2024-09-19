@@ -8,11 +8,9 @@ import { logger } from "util/logger";
 export const populateDemoUser = async (em: SqlEntityManager<PostgreSqlDriver> & EntityManager<IDatabaseDriver<Connection>>) => {
   const exists = await em.findOne(User, { firstname: "Demo" });
   if (exists) {
-    console.log("Exists");
     return exists;
   }
-
-  console.log("Creating User");
+  
   const user = new User({
     firstname: "Demo",
     lastname: "User",

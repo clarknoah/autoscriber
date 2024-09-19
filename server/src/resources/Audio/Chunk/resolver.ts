@@ -1,9 +1,11 @@
 import {
   Arg,
   Ctx,
+  FieldResolver,
   Mutation,
   Query,
   Resolver,
+  Root,
 } from "type-graphql";
 import { Context } from "util/interfaces";
 import { User } from "resources/User/model";
@@ -18,6 +20,11 @@ import { Audio } from "../model";
 export class ChunkResolver {
   constructor() {}
 
+  @FieldResolver(() => String, { description: 'Presigned URL for accessing the chunk file' })
+  async presignedUrl(@Root() chunk: Chunk): Promise<string> {
+    const presignedUrl = await generatePresignedUrl(chunk.uri, 'GET');
+    return presignedUrl;
+  }
   @Mutation((returns) => ChunkSuccessOutput, { nullable: true })
   async createChunk(
     @Arg("input") input: CreateChunkInput,
@@ -26,15 +33,16 @@ export class ChunkResolver {
 
     const { user, em } = context;
 
-    const chunkName = `${user.id}-${input.audioId}-${input.index}`;
+    const chunkUri = `chunks-${user.id}-${input.audioId}-${input.index}.wav`;
 
     const audio = await em.findOneOrFail(Audio, { id: input.audioId });
 
-    const presignedUrl = await generatePresignedUrl(chunkName);
+    const presignedUrl = await generatePresignedUrl(chunkUri);
 
     const chunk = new Chunk(user, {
       ...input,
-      audio
+      audio,
+      uri: chunkUri,
     });
 
     em.persist(chunk);
@@ -43,7 +51,7 @@ export class ChunkResolver {
     return {
       success: true,
       uploadToken: presignedUrl,
-      chunkName
+      chunkName: chunkUri,
     };
   }
 

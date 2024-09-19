@@ -25,7 +25,7 @@ fs.readFile(filePath, "utf8", function (err, data) {
     if (err) {
       console.error("An error occurred while writing the file:", err);
     } else {
-      console.log("Successfully updated gql.ts");
+      console.info("Successfully updated gql.ts");
     }
   });
 });

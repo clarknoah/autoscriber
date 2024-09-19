@@ -4,3 +4,4 @@ node_modules/
 jspm_packages/
 /local_utilities
 /data
+dist

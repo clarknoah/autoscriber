@@ -42,7 +42,6 @@ export class DefaultFieldsOptionalBy {
   @Property({
     columnType: "timestamp",
     fieldName: "deleted_at",
-    onUpdate: () => new Date(),
     nullable: true
   })
   deletedAt?: Date;

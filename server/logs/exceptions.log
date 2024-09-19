@@ -186,3 +186,99 @@ ForeignKeyConstraintViolationException: delete from "audio" where "id" in ('5256
     at Socket.Readable.push (node:internal/streams/readable:234:10)
     at TCP.onStreamRead (node:internal/stream_base_commons:190:23)
     at TCP.callbackTrampoline (node:internal/async_hooks:130:17)
+2024-09-18 23:12:52 error: uncaughtException: ⨯ Unable to compile TypeScript:
+src/resources/Audio/Chunk/resolver.ts(36,10): error TS1146: Declaration expected.
+src/resources/Audio/Chunk/resolver.ts(36,31): error TS1109: Expression expected.
+src/resources/Audio/Chunk/resolver.ts(36,32): error TS1005: ',' expected.
+src/resources/Audio/Chunk/resolver.ts(36,37): error TS1005: ',' expected.
+src/resources/Audio/Chunk/resolver.ts(36,45): error TS1005: ';' expected.
+src/resources/Audio/Chunk/resolver.ts(37,13): error TS1005: ':' expected.
+src/resources/Audio/Chunk/resolver.ts(37,72): error TS1005: ',' expected.
+src/resources/Audio/Chunk/resolver.ts(38,14): error TS1005: ':' expected.
+src/resources/Audio/Chunk/resolver.ts(38,26): error TS1005: ',' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/resources/Audio/Chunk/resolver.ts(36,10): error TS1146: Declaration expected.
+src/resources/Audio/Chunk/resolver.ts(36,31): error TS1109: Expression expected.
+src/resources/Audio/Chunk/resolver.ts(36,32): error TS1005: ',' expected.
+src/resources/Audio/Chunk/resolver.ts(36,37): error TS1005: ',' expected.
+src/resources/Audio/Chunk/resolver.ts(36,45): error TS1005: ';' expected.
+src/resources/Audio/Chunk/resolver.ts(37,13): error TS1005: ':' expected.
+src/resources/Audio/Chunk/resolver.ts(37,72): error TS1005: ',' expected.
+src/resources/Audio/Chunk/resolver.ts(38,14): error TS1005: ':' expected.
+src/resources/Audio/Chunk/resolver.ts(38,26): error TS1005: ',' expected.
+
+    at Object.<anonymous> (/Users/clarknoah/Development/autoscriber/server/src/resources/Audio/Chunk/resolver.ts:1:7)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._compile (/Users/clarknoah/Development/autoscriber/node_modules/source-map-support/source-map-support.js:568:25)
+    at Module.m._compile (/private/var/folders/g4/sdq5708d1qz7pzk4wr74rpn00000gn/T/ts-node-dev-hook-2578554778602984.js:69:33)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at require.extensions..jsx.require.extensions..js (/private/var/folders/g4/sdq5708d1qz7pzk4wr74rpn00000gn/T/ts-node-dev-hook-2578554778602984.js:114:20)
+    at require.extensions.<computed> (/private/var/folders/g4/sdq5708d1qz7pzk4wr74rpn00000gn/T/ts-node-dev-hook-2578554778602984.js:71:20)
+    at Object.nodeDevHook [as .ts] (/Users/clarknoah/Development/autoscriber/server/node_modules/ts-node-dev/lib/hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:958:12)
+2024-09-18 23:13:45 error: uncaughtException: ⨯ Unable to compile TypeScript:
+src/resources/Audio/Chunk/resolver.ts(36,10): error TS1146: Declaration expected.
+src/resources/Audio/Chunk/resolver.ts(36,31): error TS1109: Expression expected.
+src/resources/Audio/Chunk/resolver.ts(36,32): error TS1005: ',' expected.
+src/resources/Audio/Chunk/resolver.ts(36,37): error TS1005: ',' expected.
+src/resources/Audio/Chunk/resolver.ts(36,45): error TS1005: ';' expected.
+src/resources/Audio/Chunk/resolver.ts(37,13): error TS1005: ':' expected.
+src/resources/Audio/Chunk/resolver.ts(37,72): error TS1005: ',' expected.
+src/resources/Audio/Chunk/resolver.ts(38,14): error TS1005: ':' expected.
+src/resources/Audio/Chunk/resolver.ts(38,26): error TS1005: ',' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/resources/Audio/Chunk/resolver.ts(36,10): error TS1146: Declaration expected.
+src/resources/Audio/Chunk/resolver.ts(36,31): error TS1109: Expression expected.
+src/resources/Audio/Chunk/resolver.ts(36,32): error TS1005: ',' expected.
+src/resources/Audio/Chunk/resolver.ts(36,37): error TS1005: ',' expected.
+src/resources/Audio/Chunk/resolver.ts(36,45): error TS1005: ';' expected.
+src/resources/Audio/Chunk/resolver.ts(37,13): error TS1005: ':' expected.
+src/resources/Audio/Chunk/resolver.ts(37,72): error TS1005: ',' expected.
+src/resources/Audio/Chunk/resolver.ts(38,14): error TS1005: ':' expected.
+src/resources/Audio/Chunk/resolver.ts(38,26): error TS1005: ',' expected.
+
+    at Object.<anonymous> (/Users/clarknoah/Development/autoscriber/server/src/resources/Audio/Chunk/resolver.ts:1:7)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._compile (/Users/clarknoah/Development/autoscriber/node_modules/source-map-support/source-map-support.js:568:25)
+    at Module.m._compile (/private/var/folders/g4/sdq5708d1qz7pzk4wr74rpn00000gn/T/ts-node-dev-hook-2578554778602984.js:69:33)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at require.extensions..jsx.require.extensions..js (/private/var/folders/g4/sdq5708d1qz7pzk4wr74rpn00000gn/T/ts-node-dev-hook-2578554778602984.js:114:20)
+    at require.extensions.<computed> (/private/var/folders/g4/sdq5708d1qz7pzk4wr74rpn00000gn/T/ts-node-dev-hook-2578554778602984.js:71:20)
+    at Object.nodeDevHook [as .ts] (/Users/clarknoah/Development/autoscriber/server/node_modules/ts-node-dev/lib/hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:958:12)
+2024-09-18 23:13:49 error: uncaughtException: ⨯ Unable to compile TypeScript:
+src/resources/Audio/Chunk/resolver.ts(36,10): error TS1146: Declaration expected.
+src/resources/Audio/Chunk/resolver.ts(36,31): error TS1109: Expression expected.
+src/resources/Audio/Chunk/resolver.ts(36,32): error TS1005: ',' expected.
+src/resources/Audio/Chunk/resolver.ts(36,37): error TS1005: ',' expected.
+src/resources/Audio/Chunk/resolver.ts(36,45): error TS1005: ';' expected.
+src/resources/Audio/Chunk/resolver.ts(37,13): error TS1005: ':' expected.
+src/resources/Audio/Chunk/resolver.ts(37,72): error TS1005: ',' expected.
+src/resources/Audio/Chunk/resolver.ts(38,14): error TS1005: ':' expected.
+src/resources/Audio/Chunk/resolver.ts(38,26): error TS1005: ',' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/resources/Audio/Chunk/resolver.ts(36,10): error TS1146: Declaration expected.
+src/resources/Audio/Chunk/resolver.ts(36,31): error TS1109: Expression expected.
+src/resources/Audio/Chunk/resolver.ts(36,32): error TS1005: ',' expected.
+src/resources/Audio/Chunk/resolver.ts(36,37): error TS1005: ',' expected.
+src/resources/Audio/Chunk/resolver.ts(36,45): error TS1005: ';' expected.
+src/resources/Audio/Chunk/resolver.ts(37,13): error TS1005: ':' expected.
+src/resources/Audio/Chunk/resolver.ts(37,72): error TS1005: ',' expected.
+src/resources/Audio/Chunk/resolver.ts(38,14): error TS1005: ':' expected.
+src/resources/Audio/Chunk/resolver.ts(38,26): error TS1005: ',' expected.
+
+    at Object.<anonymous> (/Users/clarknoah/Development/autoscriber/server/src/resources/Audio/Chunk/resolver.ts:1:7)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._compile (/Users/clarknoah/Development/autoscriber/node_modules/source-map-support/source-map-support.js:568:25)
+    at Module.m._compile (/private/var/folders/g4/sdq5708d1qz7pzk4wr74rpn00000gn/T/ts-node-dev-hook-2578554778602984.js:69:33)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at require.extensions..jsx.require.extensions..js (/private/var/folders/g4/sdq5708d1qz7pzk4wr74rpn00000gn/T/ts-node-dev-hook-2578554778602984.js:114:20)
+    at require.extensions.<computed> (/private/var/folders/g4/sdq5708d1qz7pzk4wr74rpn00000gn/T/ts-node-dev-hook-2578554778602984.js:71:20)
+    at Object.nodeDevHook [as .ts] (/Users/clarknoah/Development/autoscriber/server/node_modules/ts-node-dev/lib/hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:958:12)
