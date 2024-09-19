@@ -1,9 +1,9 @@
 import { createServer } from "http";
 import express from "express";
-import { createBucket } from "services/fileUpload";
-import { logger } from "util/logger";
+import { createBucket } from "../services/fileUpload";
+import { logger } from "../util/logger";
 import initializeDb from "./db";
-import { env } from "config/globals";
+import { env } from "../config/globals";
 import initializeStatic from "./static";
 
 import initializeApolloServer from "./apollo";
@@ -19,7 +19,7 @@ export default async function startServer() {
   await initializeApolloServer(httpServer, app, orm);
   
   await initializeStatic(app);
-  
+
   await createBucket(env.OBJECT_STORE_BUCKET);
 
 

@@ -25,7 +25,7 @@ Autoscriber is a full-stack application that allows users to record audio, save 
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/your-username/autoscriber.git
+   git clone https://github.com/clarknoah/autoscriber.git
    cd autoscriber
    ```
 
