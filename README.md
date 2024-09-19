@@ -64,8 +64,10 @@ docker-compose up --build
 
 
 ## **Development Notes**
-* Frontend Development:
-  * Install dependencies:
+
+### Frontend
+
+**Install Dependencies**
 ```bash
 cd client
 yarn install
@@ -73,41 +75,30 @@ yarn install
 * Run the development server:
 
 ```bash
-Copy code
 yarn serve
 ```
 
-* Backend Development:
-  * Install dependencies:
+### Backend Development:
 
-bash
-Copy code
+
+**Install Dependencies**
+
+```bash
 cd server
 yarn install
+```
+
 Run the development server:
 
-bash
-Copy code
+```bash
 yarn dev
+```
 Running Migrations:
 
 Navigate to the server directory and run:
-
-bash
-Copy code
-yarn migration:up
-Troubleshooting
-Ports Already in Use:
-Ensure ports 8080, 4000, 5432, 9000, and 9001 are free before starting.
-Docker Permissions:
-If you encounter permission issues, try running Docker commands with sudo or adjust your user permissions.
-Contributing
-Pull requests are welcome. For significant changes, please open an issue first to discuss what you would like to change.
-License
-This project is licensed under the MIT License.
-markdown
-Copy code
-
+```bash
+yarn migration:create
+```
 ---
 
 ## **Task 6: Code Improvements for Interview Purposes**
